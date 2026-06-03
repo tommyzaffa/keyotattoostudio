@@ -246,6 +246,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 100vh; min-height: 560px;
   width: 100%; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
+  /* Opaque backing so the band behind is never seen through during the
+     slide crossfade (when both photos are momentarily semi-transparent). */
+  background-color: var(--bg);
+}
+/* Pull every band (except the hero) up by one viewport so it PINS at top:0
+   one screen earlier — exactly when the previous solid begins to lift off it.
+   The band is therefore already fixed at the top and gets uncovered in place
+   (bottom→top) instead of sliding up. The +100vh margin-bottom compensates so
+   the band's own solid keeps its original position and still covers it after. */
+main > .band:not(:first-of-type) {
+  margin-top: -100vh;
+  margin-bottom: 100vh;
 }
 .band-slider { position: absolute; inset: 0; }
 .band-slide {
@@ -267,7 +279,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-weight: 600;
   font-size: clamp(40px, 9vw, 132px);
   line-height: 1; letter-spacing: .22em; text-transform: uppercase;
-  display: inline-flex; align-items: center; gap: .18em; justify-content: center; flex-wrap: wrap;
+  display: flex; align-items: center; gap: .18em; justify-content: center;
+  flex-wrap: nowrap; white-space: nowrap; max-width: 100%;
 }
 .band-title .bracket { color: var(--text-faint); font-weight: 300; }
 .band-sub {
@@ -285,6 +298,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: clamp(64px, 16vw, 220px);
   line-height: .96; letter-spacing: .14em; text-transform: uppercase;
   display: flex; justify-content: center; align-items: center; gap: .1em; margin-bottom: 30px;
+  flex-wrap: nowrap; white-space: nowrap; max-width: 100%;
 }
 .hero-title .bracket { color: var(--text-faint); font-weight: 300; }
 .hero-meta {
@@ -510,6 +524,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
   .band { position: relative; }
+  main > .band:not(:first-of-type) { margin-top: 0; margin-bottom: 0; }
   .solid { min-height: 0; }
 }
 
@@ -524,7 +539,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .page-hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%, rgba(0,0,0,.7) 80%, rgba(0,0,0,.9) 100%); }
 .page-hero-content { position: relative; z-index: 2; animation: heroFade 1.4s var(--ease) .2s both; }
 .page-hero-role { font-family: var(--mono); font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; }
-.page-hero-title { font-weight: 600; font-size: clamp(40px, 10vw, 132px); line-height: 1.02; letter-spacing: .14em; text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: .12em; flex-wrap: nowrap; max-width: 14ch; margin: 0 auto; }
+.page-hero-title { font-weight: 600; font-size: clamp(40px, 10vw, 132px); line-height: 1.02; letter-spacing: .14em; text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: .12em; flex-wrap: nowrap; white-space: nowrap; max-width: 100%; margin: 0 auto; }
 .page-hero-title .bracket { flex: none; }
 .page-hero-title .bracket { color: var(--text-faint); font-weight: 300; }
 .page-hero-style { font-family: var(--mono); font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--text-faint); margin-top: 22px; }

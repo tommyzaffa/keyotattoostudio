@@ -287,12 +287,40 @@
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
+      // The hero is a permanently-pinned band, so its rect.top is always ~0;
+      // scroll straight to the very top instead of using the offset calc.
+      if (href === "#home" || target.classList.contains("band")) { scrollTo(0); return; }
       const navH = nav ? nav.getBoundingClientRect().height : 60;
-      // Scroll a touch further down so the section tucks slightly under the nav.
-      const top = target.getBoundingClientRect().top + window.pageYOffset - navH + 10;
+      // Land the section higher, tucked right under the nav (inverted direction).
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navH + 40;
       scrollTo(top);
     });
   });
+
+  /* -------- Fit bracketed titles to one line (shrink, never wrap/orphan 「」) -------- */
+  function fitTitle(el) {
+    el.style.fontSize = "";
+    const parent = el.parentElement;
+    const pcs = getComputedStyle(parent);
+    // The title uses white-space:nowrap, so it grows to its content width and
+    // never "overflows itself" — compare its content width to the AVAILABLE
+    // width instead (parent inner box, capped to the viewport with a small margin).
+    const avail = Math.min(
+      parent.clientWidth - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight),
+      document.documentElement.clientWidth - 28
+    );
+    for (let i = 0; i < 6 && el.scrollWidth > avail + 1; i++) {
+      const base = parseFloat(getComputedStyle(el).fontSize);
+      el.style.fontSize = Math.max(16, base * (avail / el.scrollWidth) * 0.97) + "px";
+    }
+  }
+  function fitTitles() {
+    document.querySelectorAll(".hero-title, .band-title, .page-hero-title").forEach(fitTitle);
+  }
+  fitTitles();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitles);
+  let fitT;
+  window.addEventListener("resize", () => { clearTimeout(fitT); fitT = setTimeout(fitTitles, 120); });
 
   /* -------- Contact form (Formspree) -------- */
   const cf = document.getElementById("contactForm");
