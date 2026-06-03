@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+<title>KEYO TATTOO STUDIO — LOCARNO CH</title>
+<meta name="description" content="Keyo Tattoo Studio — studio di tatuaggi a Locarno. Realismo, microrealismo, blackwork. Prenota un appuntamento." />
+<link rel="icon" href="img/icon.jpg" type="image/jpeg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-meta loader-meta-top"><span>「 tattoo studio 」</span></div>
+  <div class="loader-inner">
+    <span class="loader-bracket left">「</span>
+    <span class="loader-word">
+      <span class="ll" style="--i:0">k</span><span class="ll" style="--i:1">e</span><span class="ll" style="--i:2">y</span><span class="ll" style="--i:3">o</span>
+    </span>
+    <span class="loader-bracket right">」</span>
+  </div>
+  <div class="loader-line"><span></span></div>
+  <div class="loader-meta loader-meta-bottom">
+    <span>artists in residence</span><span class="lm-dot">·</span><span>locarno ch</span>
+  </div>
+</div>
+
+<!-- Side rotating text -->
+<div class="side-text side-left" aria-hidden="true">
+  <div class="phrase-stack">
+    <span class="phrase active" data-i18n="side.l1">artisti residenti</span>
+    <span class="phrase" data-i18n="side.l2">realismo · microrealismo</span>
+    <span class="phrase" data-i18n="side.l3">ogni linea una storia</span>
+    <span class="phrase" data-i18n="side.l4">il rituale del segno</span>
+  </div>
+</div>
+<div class="side-text side-right" aria-hidden="true">
+  <div class="phrase-stack">
+    <span class="phrase active" data-i18n="side.r1">locarno ch</span>
+    <span class="phrase" data-i18n="side.r2">via al castello 1</span>
+    <span class="phrase" data-i18n="side.r3">est. 2019</span>
+    <span class="phrase" data-i18n="side.r4">su appuntamento</span>
+  </div>
+</div>
+<div class="side-text side-bottom-left" aria-hidden="true">
+  <div class="phrase-stack">
+    <span class="phrase active" data-i18n="side.b1">appuntamenti aperti</span>
+    <span class="phrase" data-i18n="side.b2">walk-in benvenuti</span>
+    <span class="phrase" data-i18n="side.b3">design su misura</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav class="nav-links" id="navLinks">
+    <a href="#artisti" data-i18n="nav.artists">Artisti</a>
+    <a href="#galleria" data-i18n="nav.gallery">Galleria</a>
+    <a href="#space" data-i18n="nav.studio">Studio</a>
+    <a href="#recensioni" data-i18n="nav.reviews">Recensioni</a>
+    <a href="#contatti" data-i18n="nav.contact">Contatti</a>
+  </nav>
+  <a href="#home" class="nav-logo"><span class="bracket">「</span>KEYO<span class="bracket">」</span></a>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch" aria-label="Language">
+      <button type="button" data-lang="it">IT</button>
+      <button type="button" data-lang="en">EN</button>
+      <button type="button" data-lang="de">DE</button>
+      <button type="button" data-lang="fr">FR</button>
+    </div>
+    <a href="#contatti" class="nav-book" data-i18n="nav.book">Prenota</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- SCENE 1 — HERO video + BOOK content -->
+  <section class="band band--hero" id="home">
+      <div class="band-slider" id="heroSlider">
+        <div class="band-slide active" style="background-image:url('img/IMG_3035-2-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3020-2-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3039-2-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3026-2-1-scaled.jpg')"></div>
+      </div>
+      <div class="band-overlay"></div>
+      <div class="band-content">
+        <div class="hero-tag">tattoo studio · locarno ch</div>
+        <h1 class="hero-title"><span class="bracket">「</span>KEYO<span class="bracket">」</span></h1>
+        <div class="hero-meta">
+          <span data-i18n="style.realismo">Realismo</span><span class="dot">·</span><span data-i18n="style.microrealismo">Microrealismo</span><span class="dot">·</span><span data-i18n="style.blackwork">Blackwork</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#contatti" class="btn btn-solid" data-i18n="hero.cta1">Prenota un appuntamento</a>
+          <a href="#galleria" class="btn btn-ghost" data-i18n="hero.cta2">Galleria</a>
+        </div>
+      </div>
+      <div class="scroll-hint"><span>scroll</span><div class="scroll-line"></div></div>
+    </section>
+
+    <section class="solid">
+      <div class="section-inner book-block">
+        <span class="section-num" data-i18n="book.num">01 — Prenota</span>
+        <h2 class="section-title" data-i18n="book.title">Il tuo prossimo tatuaggio inizia qui</h2>
+        <p class="book-lead" data-i18n="book.lead">Raccontaci la tua idea e disegniamo insieme un progetto su misura. Consulenza gratuita, su appuntamento.</p>
+        <div class="book-cta">
+          <a href="#contatti" class="btn btn-solid" data-i18n="book.cta1">Prenota una consulenza</a>
+          <a href="https://wa.me/41792490858" target="_blank" rel="noopener" class="btn">WhatsApp</a>
+        </div>
+        <div class="book-facts">
+          <div class="book-fact">
+            <span class="bf-label" data-i18n="book.fact.where">Dove</span>
+            <span class="bf-value">Via Al Castello 1<br/>6600 Locarno, CH</span>
+          </div>
+          <div class="book-fact">
+            <span class="bf-label" data-i18n="book.fact.hours">Orari</span>
+            <span class="bf-value" data-i18n="book.hoursval">Lun — Sab<br/>10—12 · 14—18:30</span>
+          </div>
+          <div class="book-fact">
+            <span class="bf-label" data-i18n="book.fact.contact">Contatto</span>
+            <span class="bf-value">+41 79 249 08 58<br/>@keyo.tattoostudio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- SCENE 2 — ARTISTI video + content -->
+  <section class="band">
+      <div class="band-slider" data-slider>
+        <div class="band-slide active" style="background-image:url('img/IMG_3036-2-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3037-2-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3021-2-scaled.jpg')"></div>
+      </div>
+      <div class="band-overlay"></div>
+      <div class="band-content">
+        <h2 class="band-title"><span class="bracket">「</span><span data-i18n="nav.artists">Artisti</span><span class="bracket">」</span></h2>
+        <p class="band-sub" data-i18n="artistsBand.sub">talenti diversi · un'unica visione</p>
+      </div>
+    </section>
+
+    <section class="solid" id="artisti">
+      <div class="section-inner">
+        <div class="section-head center">
+          <span class="section-num" data-i18n="artists.num">02 — Artisti</span>
+          <h2 class="section-title">Resident Artists</h2>
+          <p class="section-lead" data-i18n="artists.lead">Quattro mani, quattro linguaggi. Scegli il tuo artista e guarda i suoi lavori.</p>
+        </div>
+        <div class="artists-grid">
+          <article class="artist-card reveal">
+            <div class="artist-img"><img src="img/IMG_3035-2-scaled.jpg" alt="Omar Keyo" loading="lazy" /></div>
+            <span class="artist-role" style="margin-top:22px" data-i18n="artist.role.founder">Founder · Resident</span>
+            <h3 class="artist-name">Omar «Keyo»</h3>
+            <span class="artist-style" data-i18n="artiststyle.keyo">Realismo · Concettuale</span>
+            <a href="https://www.instagram.com/keyo.ink/?hl=it" target="_blank" rel="noopener" class="artist-ig">@keyo.ink ↗</a>
+            <a href="artist-keyo.html" class="btn" data-i18n="artists.viewwork">Vedi i lavori</a>
+          </article>
+          <article class="artist-card reveal">
+            <div class="artist-img"><img src="img/IMG_3039-2-scaled.jpg" alt="Dario Schiavone" loading="lazy" /></div>
+            <span class="artist-role" style="margin-top:22px" data-i18n="artist.role.resident">Resident</span>
+            <h3 class="artist-name">Dario Schiavone</h3>
+            <span class="artist-style" data-i18n="artiststyle.dario">Microrealismo · Fine line</span>
+            <a href="https://www.instagram.com/dario.schiavone/" target="_blank" rel="noopener" class="artist-ig">@dario.schiavone ↗</a>
+            <a href="artist-dario.html" class="btn" data-i18n="artists.viewwork">Vedi i lavori</a>
+          </article>
+          <article class="artist-card reveal">
+            <div class="artist-img"><img src="img/IMG_3029-2.jpg" alt="Marta Gardenia" loading="lazy" /></div>
+            <span class="artist-role" style="margin-top:22px" data-i18n="artist.role.resident">Resident</span>
+            <h3 class="artist-name">Marta Gardenia</h3>
+            <span class="artist-style" data-i18n="artiststyle.marta">Color · Illustrativo</span>
+            <a href="https://www.instagram.com/gardenia_ink_/" target="_blank" rel="noopener" class="artist-ig">@gardenia_ink_ ↗</a>
+            <a href="artist-marta.html" class="btn" data-i18n="artists.viewwork">Vedi i lavori</a>
+          </article>
+          <article class="artist-card reveal">
+            <div class="artist-img"><img src="img/IMG_3021-2-scaled.jpg" alt="Sofia Brenna" loading="lazy" /></div>
+            <span class="artist-role" style="margin-top:22px" data-i18n="artist.role.resident">Resident</span>
+            <h3 class="artist-name">Sofia «Saiph»</h3>
+            <span class="artist-style" data-i18n="artiststyle.sofia">Blackwork · Dotwork</span>
+            <a href="https://www.instagram.com/keyo.tattoostudio/?hl=it" target="_blank" rel="noopener" class="artist-ig">@saiph.ink ↗</a>
+            <a href="artist-sofia.html" class="btn" data-i18n="artists.viewwork">Vedi i lavori</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <!-- SCENE 3 — GALLERIA video + content -->
+  <section class="band">
+      <div class="band-slider" data-slider>
+        <div class="band-slide active" style="background-image:url('img/IMG_3019-2.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3053-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3029-2.jpg')"></div>
+      </div>
+      <div class="band-overlay"></div>
+      <div class="band-content">
+        <h2 class="band-title"><span class="bracket">「</span><span data-i18n="nav.gallery">Galleria</span><span class="bracket">」</span></h2>
+        <p class="band-sub" data-i18n="galleryBand.sub">una selezione dei nostri lavori</p>
+      </div>
+    </section>
+
+    <section class="solid" id="galleria">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="section-num" data-i18n="gallery.num">03 — Galleria</span>
+          <h2 class="section-title">Selected Work</h2>
+        </div>
+        <div class="gallery">
+          <div class="g-item reveal" data-src="img/IMG_3019-2.jpg"><img src="img/IMG_3019-2.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3020-2-scaled.jpg"><img src="img/IMG_3020-2-scaled.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3021-2-scaled.jpg"><img src="img/IMG_3021-2-scaled.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3026-2-1-scaled.jpg"><img src="img/IMG_3026-2-1-scaled.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3029-2.jpg"><img src="img/IMG_3029-2.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3036-2-scaled.jpg"><img src="img/IMG_3036-2-scaled.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3037-2-scaled.jpg"><img src="img/IMG_3037-2-scaled.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3039-2-scaled.jpg"><img src="img/IMG_3039-2-scaled.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3049.jpg"><img src="img/IMG_3049.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3053-scaled.jpg"><img src="img/IMG_3053-scaled.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3079.jpg"><img src="img/IMG_3079.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/287205702_411509574404405_5741978152208792964_n.jpg"><img src="img/287205702_411509574404405_5741978152208792964_n.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/474692783_972399624953879_659628168663353016_n.jpg"><img src="img/474692783_972399624953879_659628168663353016_n.jpg" alt="" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/553149254_18057950735620949_5698577654058536643_n.jpg"><img src="img/553149254_18057950735620949_5698577654058536643_n.jpg" alt="" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+  <!-- SCENE 4 — SPACE video + content -->
+  <section class="band">
+      <div class="band-slider" data-slider>
+        <div class="band-slide active" style="background-image:url('img/IMG_3049.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3079.jpg')"></div>
+      </div>
+      <div class="band-overlay"></div>
+      <div class="band-content">
+        <h2 class="band-title"><span class="bracket">「</span><span data-i18n="spaceBand.title">Space</span><span class="bracket">」</span></h2>
+        <p class="band-sub" data-i18n="spaceBand.sub">il nostro studio · locarno</p>
+      </div>
+    </section>
+
+    <section class="solid" id="space">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="section-num" data-i18n="space.num">04 — Studio</span>
+          <h2 class="section-title" data-i18n="space.title">Il nostro spazio</h2>
+          <p class="section-lead" data-i18n="space.lead">Un ambiente curato, igiene impeccabile, materiali certificati. Uno spazio pensato per metterti a tuo agio.</p>
+        </div>
+        <div class="space-grid">
+          <div class="g-item reveal" data-src="img/IMG_3049.jpg"><img src="img/IMG_3049.jpg" alt="Studio Keyo" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3079.jpg"><img src="img/IMG_3079.jpg" alt="Studio Keyo" loading="lazy" /></div>
+          <div class="g-item reveal" data-src="img/IMG_3053-scaled.jpg"><img src="img/IMG_3053-scaled.jpg" alt="Studio Keyo" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+  <!-- SCENE 5 — RECENSIONI video + content -->
+  <section class="band">
+      <div class="band-slider" data-slider>
+        <div class="band-slide active" style="background-image:url('img/IMG_3037-2-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3036-2-scaled.jpg')"></div>
+      </div>
+      <div class="band-overlay"></div>
+      <div class="band-content">
+        <h2 class="band-title"><span class="bracket">「</span><span data-i18n="nav.reviews">Recensioni</span><span class="bracket">」</span></h2>
+        <p class="band-sub" data-i18n="reviewsBand.sub">le parole di chi è già passato</p>
+      </div>
+    </section>
+
+    <section class="solid" id="recensioni">
+      <div class="section-inner">
+        <div class="section-head center">
+          <span class="section-num" data-i18n="reviews.num">05 — Recensioni</span>
+          <h2 class="section-title">Reviews</h2>
+        </div>
+        <div class="reviews-summary reveal">
+          <div class="reviews-rating">
+            <span class="rating-num">5,0</span>
+            <span class="rating-stars" aria-label="5 / 5">★★★★★</span>
+            <span class="rating-meta" data-i18n="reviews.based">Basato su <strong>81</strong> recensioni Google</span>
+          </div>
+          <a class="reviews-link" href="https://www.google.com/search?q=keyo+tattoo+studio+locarno" target="_blank" rel="noopener" data-i18n="reviews.readall">Leggi tutte ↗</a>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card reveal">
+            <span class="review-stars">★★★★★</span>
+            <p class="review-text" data-i18n="review.1">Non è solo un tatuatore, Omar è un artista che trasforma emozioni in pelle. Ogni idea viene ascoltata, capita e valorizzata. La sua bravura si vede nei dettagli, ma si sente soprattutto nell'anima di ogni tatuaggio.</p>
+            <span class="review-author">— Lyam Jemora</span>
+          </article>
+          <article class="review-card reveal">
+            <span class="review-stars">★★★★★</span>
+            <p class="review-text" data-i18n="review.2">La qualità dei tatuaggi è superba, come persona è spettacolare, accoglie ogni suo cliente con calore.</p>
+            <span class="review-author">— Ian</span>
+          </article>
+          <article class="review-card reveal">
+            <span class="review-stars">★★★★★</span>
+            <p class="review-text" data-i18n="review.3">È il mio secondo tatuaggio che faccio da Omar e posso dire che oltre ad essere un grandissimo professionista lavora veramente molto bene. Se dovessi consigliarlo direi di andare da lui al 100%.</p>
+            <span class="review-author">— F.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  <!-- SCENE 6 — CONTATTI video + content -->
+  <section class="band">
+      <div class="band-slider" data-slider>
+        <div class="band-slide active" style="background-image:url('img/IMG_3026-2-1-scaled.jpg')"></div>
+        <div class="band-slide" style="background-image:url('img/IMG_3035-2-scaled.jpg')"></div>
+      </div>
+      <div class="band-overlay"></div>
+      <div class="band-content">
+        <h2 class="band-title"><span class="bracket">「</span><span data-i18n="nav.contact">Contatti</span><span class="bracket">」</span></h2>
+        <p class="band-sub" data-i18n="contactBand.sub">hai un'idea? iniziamo a parlarne</p>
+      </div>
+    </section>
+
+    <section class="solid" id="contatti">
+      <div class="section-inner">
+        <div class="section-head">
+          <span class="section-num" data-i18n="contact.num">06 — Contatti</span>
+          <h2 class="section-title">Get in touch</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="info-block">
+              <span class="info-label" data-i18n="contact.label.address">Indirizzo</span>
+              <a href="https://maps.google.com/?q=Via+Al+Castello+1,+6600+Locarno" target="_blank" rel="noopener">Via Al Castello 1<br/>6600 Locarno, CH</a>
+            </div>
+            <div class="info-block">
+              <span class="info-label" data-i18n="contact.label.phone">Telefono</span>
+              <a href="tel:+41792490858">+41 79 249 08 58</a>
+            </div>
+            <div class="info-block">
+              <span class="info-label" data-i18n="contact.label.email">Email</span>
+              <a href="mailto:keyotattoostudio@gmail.com">keyotattoostudio@gmail.com</a>
+            </div>
+            <div class="info-block">
+              <span class="info-label" data-i18n="contact.label.hours">Orari</span>
+              <p data-i18n="contact.hoursval">Lun — Sab: 10—12 · 14—18:30<br/>Domenica: <em>chiuso</em></p>
+            </div>
+            <div class="info-block">
+              <span class="info-label" data-i18n="contact.label.social">Social</span>
+              <div class="socials">
+                <a href="https://www.instagram.com/keyo.tattoostudio/?hl=it" target="_blank" rel="noopener">Instagram ↗</a>
+                <a href="https://www.facebook.com/KEYOLOCARNO" target="_blank" rel="noopener">Facebook ↗</a>
+                <a href="https://wa.me/41792490858" target="_blank" rel="noopener">WhatsApp ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/xeenernd" method="POST">
+            <p class="form-intro" data-i18n="form.intro">Raccontaci il tuo progetto. Ti risponderemo entro 48 ore.</p>
+            <div class="field">
+              <label for="cf-name" data-i18n="form.name">Nome</label>
+              <input type="text" id="cf-name" name="nome" required />
+            </div>
+            <div class="field">
+              <label for="cf-email" data-i18n="form.email">Email</label>
+              <input type="email" id="cf-email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="cf-style" data-i18n="form.style">Stile</label>
+              <select id="cf-style" name="stile">
+                <option data-i18n="style.realismo">Realismo</option>
+                <option data-i18n="style.microrealismo">Microrealismo</option>
+                <option data-i18n="style.blackwork">Blackwork</option>
+                <option data-i18n="style.color">Color</option>
+                <option data-i18n="form.opt.other">Altro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cf-msg" data-i18n="form.msg">Descrivi il tuo progetto</label>
+              <textarea id="cf-msg" name="messaggio" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-solid" id="cfSubmit" data-i18n="form.submit">Invia richiesta</button>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="contact-map reveal" aria-label="Keyo Tattoo Studio — Locarno">
+          <div class="contact-map-meta">
+            <span class="info-label" data-i18n="map.where">Dove siamo</span>
+            <a class="contact-map-link" href="https://maps.google.com/?q=Via+Al+Castello+1,+6600+Locarno" target="_blank" rel="noopener" data-i18n="map.open">Apri in Google Maps ↗</a>
+          </div>
+          <div class="contact-map-frame">
+            <iframe src="https://www.google.com/maps?q=Via%20Al%20Castello%201%2C%206600%20Locarno&z=16&output=embed" title="Keyo Tattoo Studio — Via al Castello 1, 6600 Locarno" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <a href="#home" class="footer-brand"><span class="bracket">「</span>KEYO<span class="bracket">」</span></a>
+    <nav class="footer-nav">
+      <a href="#artisti" data-i18n="nav.artists">Artisti</a>
+      <a href="#galleria" data-i18n="nav.gallery">Galleria</a>
+      <a href="#space" data-i18n="nav.studio">Studio</a>
+      <a href="#recensioni" data-i18n="nav.reviews">Recensioni</a>
+      <a href="#contatti" data-i18n="nav.contact">Contatti</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Keyo Tattoo Studio · Locarno CH</span>
+    <span class="footer-credit"><span data-i18n="footer.credit">Sviluppato da</span> <a href="https://www.tommyzaffa.com" target="_blank" rel="noopener">Thomas Zaffalon</a></span>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Prev">‹</button>
+  <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
