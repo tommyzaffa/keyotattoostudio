@@ -120,8 +120,8 @@
     "style.blackwork":     { it: "Blackwork", en: "Blackwork", de: "Blackwork", fr: "Blackwork" },
     "style.color":         { it: "Color", en: "Color", de: "Color", fr: "Couleur" },
 
-    "artiststyle.keyo":  { it: "Realismo · Concettuale", en: "Realism · Conceptual", de: "Realismus · Konzeptionell", fr: "Réalisme · Conceptuel" },
-    "artiststyle.dario": { it: "Microrealismo · Fine line", en: "Micro-realism · Fine line", de: "Mikrorealismus · Fine Line", fr: "Micro-réalisme · Fine line" },
+    "artiststyle.keyo":  { it: "Realismo · Microrealismo · Concettuale", en: "Realism · Micro-realism · Conceptual", de: "Realismus · Mikrorealismus · Konzeptionell", fr: "Réalisme · Micro-réalisme · Conceptuel" },
+    "artiststyle.dario": { it: "Line work · Mandala · Blackwork · Semi realism", en: "Line work · Mandala · Blackwork · Semi realism", de: "Linework · Mandala · Blackwork · Semi-Realismus", fr: "Line work · Mandala · Blackwork · Semi-réalisme" },
     "artiststyle.marta": { it: "Color · Illustrativo", en: "Color · Illustrative", de: "Color · Illustrativ", fr: "Couleur · Illustratif" },
 
     "review.1": { it: "Non è solo un tatuatore, Omar è un artista che trasforma emozioni in pelle. Ogni idea viene ascoltata, capita e valorizzata. La sua bravura si vede nei dettagli, ma si sente soprattutto nell'anima di ogni tatuaggio.", en: "He's not just a tattooist — Omar is an artist who turns emotions into skin. Every idea is heard, understood and elevated. His skill shows in the details, but you feel it most in the soul of every tattoo.", de: "Er ist nicht nur ein Tätowierer — Omar ist ein Künstler, der Emotionen in Haut verwandelt. Jede Idee wird gehört, verstanden und veredelt. Sein Können zeigt sich in den Details, aber man spürt es vor allem in der Seele jedes Tattoos.", fr: "Ce n'est pas qu'un tatoueur — Omar est un artiste qui transforme les émotions en peau. Chaque idée est écoutée, comprise et valorisée. Son talent se voit dans les détails, mais se ressent surtout dans l'âme de chaque tatouage." },
@@ -135,6 +135,16 @@
     "ac.hero.sub":   { it: "diventa tatuatore professionista in 8 mesi", en: "become a professional tattooist in 8 months", de: "werde in 8 monaten professioneller tätowierer", fr: "deviens tatoueur professionnel en 8 mois" },
     "ac.hero.cta1":  { it: "Iscriviti al corso", en: "Enroll now", de: "Jetzt anmelden", fr: "S'inscrire au cours" },
     "ac.hero.cta2":  { it: "Scopri il programma", en: "See the program", de: "Programm ansehen", fr: "Voir le programme" },
+    "ac.float.program": { it: "Programma", en: "Program", de: "Programm", fr: "Programme" },
+    "ac.float.apply": { it: "Candidati", en: "Apply", de: "Bewerben", fr: "Postuler" },
+    "ac.quick.num":   { it: "Orientamento", en: "Orientation", de: "Orientierung", fr: "Orientation" },
+    "ac.quick.title": { it: "Capisci il percorso giusto per te", en: "Find the right path for you", de: "Finde den passenden Weg für dich", fr: "Trouve le parcours fait pour toi" },
+    "ac.quick.text":  { it: "Dai un'occhiata ai mesi chiave, poi richiedi un colloquio per valutare livello, obiettivi e disponibilità.", en: "Look through the key months, then request an interview to review your level, goals and availability.", de: "Sieh dir die wichtigsten Monate an und vereinbare dann ein Gespräch, um Level, Ziele und Verfügbarkeit zu klären.", fr: "Parcours les mois clés, puis demande un entretien pour évaluer ton niveau, tes objectifs et tes disponibilités." },
+    "ac.quick.apply": { it: "Richiedi un colloquio", en: "Request an interview", de: "Gespräch anfragen", fr: "Demander un entretien" },
+    "ac.mid.num":    { it: "Hai già basi?", en: "Already have basics?", de: "Schon Grundlagen?", fr: "Tu as déjà les bases ?" },
+    "ac.mid.title":  { it: "Portaci disegni e obiettivi", en: "Bring your drawings and goals", de: "Bring Zeichnungen und Ziele mit", fr: "Apporte dessins et objectifs" },
+    "ac.mid.text":   { it: "Durante il colloquio capiamo da dove partire e come rendere il percorso concreto per il tuo livello.", en: "During the interview we understand where to start and how to make the path concrete for your level.", de: "Im Gespräch klären wir, wo du startest und wie der Weg zu deinem Level passt.", fr: "Pendant l'entretien, nous voyons d'où partir et comment adapter le parcours à ton niveau." },
+    "ac.mid.cta":    { it: "Parla con noi", en: "Talk to us", de: "Sprich mit uns", fr: "Parle-nous" },
 
     "ac.intro.num":  { it: "Il corso", en: "The course", de: "Der Kurs", fr: "Le cours" },
     "ac.intro.title":{ it: "Da zero a professionista", en: "From zero to professional", de: "Vom Anfänger zum Profi", fr: "De zéro à professionnel" },
@@ -426,6 +436,85 @@
     reveals.forEach((el) => el.classList.add("in"));
   }
 
+  /* -------- Academy quick navigation + CTA visibility -------- */
+  (function () {
+    const monthLinks = Array.from(document.querySelectorAll("[data-ac-month-link]"));
+    const months = monthLinks
+      .map((link) => {
+        const href = link.getAttribute("href") || "";
+        return href.startsWith("#") ? document.getElementById(href.slice(1)) : null;
+      })
+      .filter(Boolean);
+
+    if (monthLinks.length && months.length) {
+      let requestedMonthId = months.some((month) => "#" + month.id === window.location.hash)
+        ? window.location.hash.slice(1)
+        : null;
+      const setActiveMonth = (id) => {
+        monthLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === "#" + id));
+        months.forEach((month) => month.classList.toggle("active-month", month.id === id));
+      };
+      const updateActiveMonth = () => {
+        const monthNav = document.querySelector(".ac-month-nav");
+        const marker = monthNav ? monthNav.getBoundingClientRect().bottom + 10 : Math.min(window.innerHeight * 0.32, 280);
+        if (requestedMonthId) {
+          const requested = months.find((month) => month.id === requestedMonthId);
+          if (requested) {
+            const requestedRect = requested.getBoundingClientRect();
+            if (requestedRect.top <= marker && requestedRect.bottom >= marker) {
+              setActiveMonth(requestedMonthId);
+              return;
+            }
+          }
+          requestedMonthId = null;
+        }
+        let current = months[0];
+        let closest = Infinity;
+        months.forEach((month) => {
+          const rect = month.getBoundingClientRect();
+          if (rect.bottom < marker) return;
+          const distance = Math.abs(rect.top - marker);
+          if (distance < closest) {
+            closest = distance;
+            current = month;
+          }
+        });
+        setActiveMonth(current.id);
+      };
+      monthLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const href = link.getAttribute("href") || "";
+          if (href.startsWith("#")) {
+            requestedMonthId = href.slice(1);
+            setActiveMonth(requestedMonthId);
+          }
+        });
+      });
+      window.addEventListener("scroll", updateActiveMonth, { passive: true });
+      window.addEventListener("resize", updateActiveMonth);
+      updateActiveMonth();
+    }
+
+    const floatingCta = document.querySelector(".ac-floating-cta");
+    const enrollment = document.getElementById("iscrizione");
+    const quickAction = document.querySelector(".ac-action-solid");
+    const program = document.getElementById("programma");
+    if (floatingCta) {
+      const updateFloatingCta = () => {
+        const afterQuickAction = !quickAction || quickAction.getBoundingClientRect().bottom < window.innerHeight - 80;
+        const beforeEnrollment = !enrollment || enrollment.getBoundingClientRect().top > window.innerHeight * 0.5;
+        const programRect = program ? program.getBoundingClientRect() : null;
+        const programInView = programRect ? programRect.top < window.innerHeight && programRect.bottom > 0 : false;
+        const shouldShow = afterQuickAction && beforeEnrollment && !programInView;
+        floatingCta.classList.toggle("is-visible", shouldShow);
+        floatingCta.classList.toggle("is-hidden", !shouldShow);
+      };
+      window.addEventListener("scroll", updateFloatingCta, { passive: true });
+      window.addEventListener("resize", updateFloatingCta);
+      updateFloatingCta();
+    }
+  })();
+
   /* -------- Lightbox -------- */
   const items = Array.from(document.querySelectorAll(".g-item"));
   const lb = document.getElementById("lightbox");
@@ -495,8 +584,13 @@
       // scroll straight to the very top instead of using the offset calc.
       if (href === "#home" || target.classList.contains("band")) { scrollTo(0); return; }
       const navH = nav ? nav.getBoundingClientRect().height : 60;
-      // Land the section higher, tucked right under the nav (inverted direction).
-      const top = target.getBoundingClientRect().top + window.pageYOffset - navH + 40;
+      const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
+      let top = targetTop - navH + 40;
+      if (target.classList.contains("ac-month")) {
+        const monthNav = document.querySelector(".ac-month-nav");
+        const monthNavH = monthNav ? monthNav.getBoundingClientRect().height : 0;
+        top = targetTop - navH - monthNavH - 72;
+      }
       scrollTo(top);
     });
   });
