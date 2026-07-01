@@ -380,7 +380,7 @@ main > .band:not(:first-of-type) {
 }
 
 /* ========== Artists ========== */
-.artists-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 28px); }
+.artists-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); max-width: 900px; margin: 0 auto; }
 .artist-card { display: flex; flex-direction: column; text-align: center; }
 .artist-img { aspect-ratio: 4/5; overflow: hidden; background: var(--bg-2); border: 1px solid var(--line); }
 .artist-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform .8s var(--ease), filter .6s var(--ease); }
@@ -508,6 +508,12 @@ main > .band:not(:first-of-type) {
 .contact-map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: invert(92%) hue-rotate(180deg) saturate(.6) contrast(.95); transition: filter .4s var(--ease); }
 .contact-map:hover .contact-map-frame iframe { filter: invert(92%) hue-rotate(180deg) saturate(.85) contrast(1); }
 @media (max-width: 600px) { .contact-map-frame { aspect-ratio: 4/3; } }
+.map-consent { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; padding: 24px; background: var(--bg-3); }
+.map-consent-text { max-width: 440px; font-size: 13px; line-height: 1.6; color: var(--text-dim); margin: 0; }
+.map-consent-privacy { font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--text-faint); text-decoration: underline; text-underline-offset: 3px; }
+.map-consent-privacy:hover { color: var(--text); }
+.footer-email { color: var(--text-dim); border-bottom: 1px solid transparent; padding-bottom: 1px; }
+.footer-email:hover { color: var(--text); border-bottom-color: var(--text); }
 
 /* ========== Footer ========== */
 .footer { position: relative; z-index: 1; background: var(--bg-2); border-top: 1px solid var(--line); padding: 60px var(--pad) 40px; }
